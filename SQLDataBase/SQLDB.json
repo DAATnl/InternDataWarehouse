@@ -1,0 +1,37 @@
+{
+    "sku": {
+        "name": "Standard",
+        "tier": "Standard",
+        "capacity": 10
+    },
+    "kind": "v12.0,user",
+    "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": 268435456000,
+        "status": "Online",
+        "databaseId": "6e407dc9-b80e-4121-9a7b-7999176394c9",
+        "creationDate": "2022-12-28T09:21:35.103Z",
+        "currentServiceObjectiveName": "S0",
+        "requestedServiceObjectiveName": "S0",
+        "defaultSecondaryLocation": "northeurope",
+        "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+        "zoneRedundant": false,
+        "earliestRestoreDate": "2023-01-09T10:08:23.6459235Z",
+        "readScale": "Disabled",
+        "currentSku": {
+            "name": "Standard",
+            "tier": "Standard",
+            "capacity": 10
+        },
+        "currentBackupStorageRedundancy": "Local",
+        "requestedBackupStorageRedundancy": "Local",
+        "maintenanceConfigurationId": "/subscriptions/359cbe37-22ff-4397-bce0-fdffbb5e6104/providers/Microsoft.Maintenance/publicMaintenanceConfigurations/SQL_Default",
+        "isLedgerOn": false,
+        "isInfraEncryptionEnabled": false
+    },
+    "location": "westeurope",
+    "tags": {},
+    "id": "/subscriptions/359cbe37-22ff-4397-bce0-fdffbb5e6104/resourceGroups/InterDataWareHouse/providers/Microsoft.Sql/servers/interndwserver/databases/InternDWDatabase",
+    "name": "InternDWDatabase",
+    "type": "Microsoft.Sql/servers/databases"
+}

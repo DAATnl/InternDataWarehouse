@@ -1,0 +1,25 @@
+{
+    "name": "InternDWDF",
+    "id": "/subscriptions/359cbe37-22ff-4397-bce0-fdffbb5e6104/resourceGroups/interdatawarehouse/providers/Microsoft.DataFactory/factories/interndwdf",
+    "type": "Microsoft.DataFactory/factories",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "createTime": "2022-12-27T14:30:02.172263Z",
+        "version": "2018-06-01",
+        "factoryStatistics": {
+            "totalResourceCount": 0,
+            "maxAllowedResourceCount": 0,
+            "factorySizeInGbUnits": 0,
+            "maxAllowedFactorySizeInGbUnits": 0
+        },
+        "publicNetworkAccess": "Enabled"
+    },
+    "eTag": "\"1a00995c-0000-0100-0000-63ab016a0000\"",
+    "location": "eastus",
+    "identity": {
+        "type": "SystemAssigned",
+        "principalId": "6bfc6eb5-66f4-4d91-87dd-c13da473860b",
+        "tenantId": "75714b6d-4c69-4d08-9e3f-d99afb79ae19"
+    },
+    "tags": {}
+}

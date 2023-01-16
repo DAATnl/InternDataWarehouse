@@ -1,0 +1,19 @@
+{
+    "name": "ClockifyReports",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [],
+        "type": "RestService",
+        "typeProperties": {
+            "url": "https://reports.api.clockify.me/v1",
+            "enableServerCertificateValidation": true,
+            "authenticationType": "Anonymous",
+            "authHeaders": {
+                "x-api-key": {
+                    "type": "SecureString",
+                    "value": "**********"
+                }
+            }
+        }
+    }
+}

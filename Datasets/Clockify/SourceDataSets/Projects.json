@@ -1,0 +1,19 @@
+{
+    "name": "ClockifyProjects",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "Clockify_Base_Endpoints",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "ClockifyConnector"
+        },
+        "annotations": [],
+        "type": "RestResource",
+        "typeProperties": {
+            "relativeUrl": "workspaces/60efd9fc7add1d7375d4b297/projects?page=2"
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

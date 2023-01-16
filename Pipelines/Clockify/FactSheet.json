@@ -1,0 +1,135 @@
+{
+    "name": "ClockifyFactSheet",
+    "properties": {
+        "activities": [
+            {
+                "name": "Copy data1",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "RestSource",
+                        "httpRequestTimeout": "00:01:40",
+                        "requestInterval": "00.00:00:00.010",
+                        "requestMethod": "POST",
+                        "requestBody": {
+                            "value": "{\n   \"dateRangeStart\":\"2022-01-01T00:00:00.000\",\n   \"dateRangeEnd\":\"2022-12-31T23:59:59.000\",\n   \"detailedFilter\":{\n      \"page\":\"7\",\n      \"pageSize\":\"1000\"\n   }\n}",
+                            "type": "Expression"
+                        },
+                        "additionalHeaders": {
+                            "x-api-key": "ZDA3ZjczODktODM0Ny00Y2JkLWI2ZDUtNzU2OTdkMmI4MzBh",
+                            "Content-Type": "application/json"
+                        },
+                        "paginationRules": {
+                            "supportRFC5988": "true"
+                        }
+                    },
+                    "sink": {
+                        "type": "AzureSqlSink",
+                        "writeBehavior": "insert",
+                        "sqlWriterUseTableLock": false
+                    },
+                    "enableStaging": false,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "mappings": [
+                            {
+                                "source": {
+                                    "path": "['_id']"
+                                },
+                                "sink": {
+                                    "name": "Time_track_id",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['userId']"
+                                },
+                                "sink": {
+                                    "name": "Employee_id",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['timeInterval']['start']"
+                                },
+                                "sink": {
+                                    "name": "Datum",
+                                    "type": "DateTime"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['timeInterval']['duration']"
+                                },
+                                "sink": {
+                                    "name": "Hours",
+                                    "type": "Int32"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['billable']"
+                                },
+                                "sink": {
+                                    "name": "Billable",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['projectId']"
+                                },
+                                "sink": {
+                                    "name": "Project_id",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "path": "['taskId']"
+                                },
+                                "sink": {
+                                    "name": "Task_id",
+                                    "type": "String"
+                                }
+                            }
+                        ],
+                        "collectionReference": "$['timeentries']",
+                        "mapComplexValuesToString": false
+                    }
+                },
+                "inputs": [
+                    {
+                        "referenceName": "Clockify_detailed_report",
+                        "type": "DatasetReference"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "Fact_Timesheet_Clockify",
+                        "type": "DatasetReference"
+                    }
+                ]
+            }
+        ],
+        "variables": {
+            "tes": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "lastPublishTime": "2022-12-28T14:55:54Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}

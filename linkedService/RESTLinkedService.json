@@ -1,0 +1,18 @@
+{
+	"name": "RESTLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.clockify.me/api/v1",
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"x-api-key": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
+		},
+		"annotations": []
+	}
+}

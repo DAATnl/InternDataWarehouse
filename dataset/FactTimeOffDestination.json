@@ -1,0 +1,42 @@
+{
+	"name": "FactTimeOffDestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "timeUnit",
+				"type": "varchar"
+			},
+			{
+				"name": "balanceDiff",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Employee_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Time_Off_Status",
+				"type": "varchar"
+			},
+			{
+				"name": "Time_Off_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Fact_Time_Off"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

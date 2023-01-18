@@ -1,0 +1,45 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://growteq-no.atlassian.net/rest/api/2/search?jql=&maxResults=200",
+					"method": "GET",
+					"authentication": {
+						"type": "Basic",
+						"username": "jdamen@growteq.nl",
+						"password": {
+							"type": "SecureString",
+							"value": "**********"
+						}
+					}
+				}
+			}
+		],
+		"variables": {
+			"test": {
+				"type": "Array",
+				"defaultValue": [
+					100,
+					200,
+					300
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-01-09T14:49:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

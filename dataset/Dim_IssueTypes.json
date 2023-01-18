@@ -1,0 +1,19 @@
+{
+	"name": "Dim_IssueTypes",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jira",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JiraConnector"
+		},
+		"annotations": [],
+		"type": "JiraObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Platform\".\"Api_Issue_Type\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

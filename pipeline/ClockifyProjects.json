@@ -1,0 +1,132 @@
+{
+	"name": "ClockifyProjects",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "Project_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']"
+								},
+								"sink": {
+									"name": "Project_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['clientId']"
+								},
+								"sink": {
+									"name": "Client_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['billable']"
+								},
+								"sink": {
+									"name": "Billable",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['archived']"
+								},
+								"sink": {
+									"name": "Archief_status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['duration']"
+								},
+								"sink": {
+									"name": "Total_hours",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timeEstimate']['estimate']"
+								},
+								"sink": {
+									"name": "Time_estimate",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": true
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ClockifyProjects",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ProjectsClockify",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"variables": {
+			"test": {
+				"type": "Array",
+				"defaultValue": [
+					100,
+					200,
+					300
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-01-04T15:36:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

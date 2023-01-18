@@ -1,0 +1,33 @@
+{
+	"name": "FactIssueSprint",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sprint_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "issue_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Issue_Key",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactIssueSprint"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "Dim_Sprints",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jira",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JiraConnector"
+		},
+		"annotations": [],
+		"type": "JiraObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Agile\".\"Agile_Board_Sprint\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

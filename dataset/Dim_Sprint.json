@@ -1,0 +1,45 @@
+{
+	"name": "Dim_Sprint",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Sprint_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Sprint_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "State",
+				"type": "varchar"
+			},
+			{
+				"name": "Start_Date",
+				"type": "date"
+			},
+			{
+				"name": "End_Date",
+				"type": "date"
+			},
+			{
+				"name": "Complete_Date",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dim_Sprints"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

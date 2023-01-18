@@ -1,0 +1,19 @@
+{
+	"name": "Fact_IssueSprints",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jira",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JiraConnector"
+		},
+		"annotations": [],
+		"type": "JiraObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Agile\".\"Agile_Board_Sprint_Issue\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,199 @@
+{
+	"name": "Jira_IssueStatues",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JiraSource"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Issues_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Issue_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_key",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Issue_Key",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_parent_fields_issuetype_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Issue_Type_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_parent_fields_status_statusCategory_id",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Issue_Status_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_summary",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Summary",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_description",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Description",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_priority_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Priority",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_assignee_displayName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Assignee_Name",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_created",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Created_Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_updated",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Last_Update",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_parent_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Parent_Issue_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Issues_fields_parent_key",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Parent_Issue_Key",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "customfield_10028",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Story_points",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Fact_Issues",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "FactIssueJira",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-12-30T14:26:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

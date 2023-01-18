@@ -1,0 +1,33 @@
+{
+	"name": "Groups_clockify",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Group_id",
+				"type": "varchar"
+			},
+			{
+				"name": "Group_name",
+				"type": "varchar"
+			},
+			{
+				"name": "user_id",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dim_Groups"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

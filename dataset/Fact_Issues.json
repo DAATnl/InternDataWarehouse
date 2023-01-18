@@ -1,0 +1,19 @@
+{
+	"name": "Fact_Issues",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jira",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JiraConnector"
+		},
+		"annotations": [],
+		"type": "JiraObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Extra\".\"Agile_Board_Issue\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

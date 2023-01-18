@@ -1,0 +1,19 @@
+{
+	"name": "RestService2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://eddash.digitaalopleveren.nl/api",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"access_token": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
+		}
+	}
+}

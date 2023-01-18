@@ -1,0 +1,73 @@
+{
+	"name": "FactIssueJira",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Issue_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Issue_Key",
+				"type": "varchar"
+			},
+			{
+				"name": "Issue_Type_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Issue_Status_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Summary",
+				"type": "varchar"
+			},
+			{
+				"name": "Description",
+				"type": "varchar"
+			},
+			{
+				"name": "Priority",
+				"type": "varchar"
+			},
+			{
+				"name": "Assignee_Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Created_Date",
+				"type": "date"
+			},
+			{
+				"name": "Last_Update",
+				"type": "date"
+			},
+			{
+				"name": "Parent_Issue_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "Parent_Issue_Key",
+				"type": "varchar"
+			},
+			{
+				"name": "Story_points",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "JiraFactIssue"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

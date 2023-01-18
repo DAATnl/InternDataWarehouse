@@ -1,0 +1,19 @@
+{
+	"name": "Dim_IssueStatuses",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Jira",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JiraConnector"
+		},
+		"annotations": [],
+		"type": "JiraObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Platform\".\"Api_Status\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

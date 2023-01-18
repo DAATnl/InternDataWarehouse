@@ -1,0 +1,33 @@
+{
+	"name": "Dim_Labels",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Labels",
+				"type": "varchar"
+			},
+			{
+				"name": "Issue_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "IssueKey",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dim_Labels"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

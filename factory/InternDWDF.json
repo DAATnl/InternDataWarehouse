@@ -1,0 +1,9 @@
+{
+	"name": "InternDWDF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6bfc6eb5-66f4-4d91-87dd-c13da473860b",
+		"tenantId": "75714b6d-4c69-4d08-9e3f-d99afb79ae19"
+	}
+}

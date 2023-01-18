@@ -1,0 +1,33 @@
+{
+	"name": "Dim_issuesTypes",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SinkDatasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "IssueTypeId",
+				"type": "varchar"
+			},
+			{
+				"name": "IssueTypeName",
+				"type": "varchar"
+			},
+			{
+				"name": "IsSubtask",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Dim_IssuesTypes"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
